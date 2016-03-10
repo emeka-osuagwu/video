@@ -21,7 +21,7 @@
 	</div>
 <div class="header-top-right">
 	<div class="file">
-		<a href="upload.html">Upload</a>
+		<a href="/cakephp/file/upload">Upload</a>
 	</div>	
 
 	<div class="signin">
@@ -169,7 +169,7 @@
 			});
 		</script>	
 	</div>
-	
+
 <div class="signin">
 <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a>
 <div id="small-dialog" class="mfp-hide">

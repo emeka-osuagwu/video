@@ -41,7 +41,7 @@ class FileController extends AppController {
 			"videos" => $videos,
 			"audios" => $audios
 		];
-		
+
 		$this->set('data', $data);
 	}
 
@@ -52,8 +52,21 @@ class FileController extends AppController {
 		
 		if ($requestType) 
 		{
-			$file = $this->File->save($this->request->data);
-			echo $this->toJson($this->File->find('all'));
+			$type = $this->request->data['type'];
+			
+			if ($type == 1) {
+				echo "audio";
+			}
+			elseif ($type == 0) {
+				$this->uploadVIdeo($this->request->data);
+			}
 		}
+	}
+
+
+	public function uploadVIdeo($data)
+	{
+		$data['user_id'] = 1;
+		$new_file = $this->File->save($data);
 	}
 }
