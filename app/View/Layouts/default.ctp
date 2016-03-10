@@ -1,23 +1,17 @@
 <html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title></title>
-	<?php
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-</head>
+	<?php echo $this->element('general/head'); ?>
+	
 	<body>
-		<div id="container">
-		<a href="/cakephp/users/register">register</a>
-		<a href="/cakephp/file/upload">upload</a>
 		
-
+		<?php echo $this->element('general/nav'); ?>
+		
+		<div id="container">
 			<div id="content">
 				<?php echo $this->fetch('content'); ?>
 			</div>
-
 		</div>
+		
+		<?php echo $this->element('general/js'); ?>
 	</body>
+
 </html>

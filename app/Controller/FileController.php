@@ -32,6 +32,12 @@ class FileController extends AppController {
 
 	public $files = array();
 
+	public function index()
+	{
+		# code...
+	}
+
+
 	public function upload() {
 	
 		$requestType = $this->request->is('post');
@@ -39,6 +45,7 @@ class FileController extends AppController {
 		if ($requestType) 
 		{
 			$file = $this->File->save($this->request->data);
+			echo $this->toJson($this->File->find('all'));
 		}
 	}
 }
