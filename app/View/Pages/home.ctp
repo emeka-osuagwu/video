@@ -1,1 +1,0 @@
-<a href="users/register">register</a>

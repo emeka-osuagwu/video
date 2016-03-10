@@ -10,6 +10,9 @@
 </head>
 	<body>
 		<div id="container">
+		<a href="/cakephp/users/register">register</a>
+		<a href="/cakephp/file/upload">upload</a>
+		
 
 			<div id="content">
 				<?php echo $this->fetch('content'); ?>

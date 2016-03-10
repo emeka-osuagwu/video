@@ -28,18 +28,17 @@ App::uses('AppController', 'Controller');
  * @package       app.Controller
  * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
  */
-class UsersController extends AppController {
+class FileController extends AppController {
 
-	public $uses = array();
+	public $files = array();
 
-	public function register() {
+	public function upload() {
 	
 		$requestType = $this->request->is('post');
-
+		
 		if ($requestType) 
 		{
-			$user = $this->User->save($this->request->data);
+			$file = $this->File->save($this->request->data);
 		}
 	}
-
 }
