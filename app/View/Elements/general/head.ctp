@@ -11,11 +11,4 @@
 		<?= $this->Html->css('popuo-box.css') ?>
 		<?= $this->Html->css('bootstrap.min.css') ?>
 		<?= $this->Html->css('style.css') ?>
-		
 	</head>
-
-
-
-<script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
-	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>

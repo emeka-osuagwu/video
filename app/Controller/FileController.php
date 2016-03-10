@@ -34,7 +34,15 @@ class FileController extends AppController {
 
 	public function index()
 	{
-		# code...
+		$videos = $this->File->query("SELECT * FROM files WHERE type=0;");
+		$audios = $this->File->query("SELECT * FROM files WHERE type=1;");
+		
+		$data = [
+			"videos" => $videos,
+			"audios" => $audios
+		];
+		
+		$this->set('data', $data);
 	}
 
 
