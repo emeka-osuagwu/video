@@ -4,6 +4,7 @@
 	
 	<body>
 		<?php echo $this->element('general/nav'); ?>
+		<?php echo $this->element('general/sidebar'); ?>
 		<?php echo $this->fetch('content'); ?>
 	</body>
 
