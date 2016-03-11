@@ -11,15 +11,15 @@
 		  </ul>
 
 		  <div class="tab-content">
-			<div role="tabpanel" class="tab-pane activ" id="home">
+			<div role="tabpanel" class="tab-pane " id="home">
 				<div class="upload-grids">
 					<div class="upload-right">
 						<div class="upload-file">
 							<div class="services-icon">
 								<span class="glyphicon glyphicon-open" aria-hidden="true"></span>
 							</div>
-							<form action="/cakephp/file/upload" method="post">
-								<input type="file" name="audio" value="Choose file..">
+							<form action="/cakephp/file/upload" method="post" enctype="multipart/form-data">
+								<input type="file" name="audio_file" value="Choose file..">
 								<div class="upload-info">
 									<button class="btn">Upload</button>
 								</div>
@@ -35,7 +35,7 @@
 
 						<form action="/cakephp/file/upload" method="post" class="col-md-6 col-md-offset-3">
 							
-							<input type="text" name="type" value="0">
+							<input type="text" hidden="true" name="type" value="0">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Title</label>
 								<input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">

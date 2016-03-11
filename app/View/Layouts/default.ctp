@@ -3,11 +3,8 @@
 	<?php echo $this->element('general/js'); ?>
 	
 	<body>
-		
 		<?php echo $this->element('general/nav'); ?>
 		<?php echo $this->fetch('content'); ?>
-		
-		
 	</body>
 
 </html>

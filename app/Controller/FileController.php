@@ -52,14 +52,16 @@ class FileController extends AppController {
 		
 		if ($requestType) 
 		{
-			$type = $this->request->data['type'];
 			
-			if ($type == 1) {
-				echo "audio";
+			if (!isset($this->request->data['type'])) 
+			{
+				$this->uploadAudio($this->request->data);
 			}
-			elseif ($type == 0) {
+			else 
+			{
 				$this->uploadVIdeo($this->request->data);
 			}
+			
 		}
 	}
 
@@ -68,5 +70,31 @@ class FileController extends AppController {
 	{
 		$data['user_id'] = 1;
 		$new_file = $this->File->save($data);
+	}
+
+	public function uploadAudio($data)
+	{
+		
+		$file = $_FILES['audio_file'];
+		
+		$path = $_SERVER['DOCUMENT_ROOT'] . "/cakephp";
+
+		echo $path . '/' . $file['name'];
+		//echo  $target_path = . "webroot/".$file['name'];
+
+
+		if(move_uploaded_file($file['tmp_name'], "webroot")) {
+			echo "string";
+		}
+
+
+		exit;
+	}
+
+
+	public function view($id)
+	{
+		$file = $this->File->query("SELECT * FROM files WHERE id=$id;");
+		$this->set('file', $file);
 	}
 }

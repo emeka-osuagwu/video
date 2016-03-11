@@ -8,7 +8,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="index.html"><h1><img src="../images/logo.png" alt="" /></h1></a>
+		<a class="navbar-brand" href="/cakephp/file"><h1><img src="../images/logo.png" alt="" /></h1></a>
 	</div>
 
 
