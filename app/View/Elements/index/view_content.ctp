@@ -6,7 +6,7 @@
 					<h3><?php echo $file[0]['files']['title']; ?></h3>	
 				</div>
 				<div class="video-grid">
-					<iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/<?php echo $file[0]['files']['link']; ?>" allowfullscreen></iframe>
 				</div>
 			</div>
 			<div class="song-grid-right">

@@ -48,15 +48,10 @@ class FileController extends AppController {
 
 	public function upload() {
 	
-
 		$requestType = $this->request->is('post');
 		
 		if ($requestType) 
 		{
-
-		print_r($this->request->data);
-		exit();
-			
 			if (!isset($this->request->data['type'])) 
 			{
 				$this->uploadAudio($this->request->data);

@@ -42,12 +42,12 @@
 				</div>
 			</div>
 			<div class="signup">
-				<form>
-					<input type="text" class="email" placeholder="Mobile Number" maxlength="10" pattern="[1-9]{1}\d{9}" title="Enter a valid mobile number" />
+				<form action="/cakephp/users/register" method="post">
+					<input type="text" class="email" placeholder="username" required="required" name="name" >
+					<input type="text" class="email" placeholder="Email" required="required" name="email" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
+					<input type="password" placeholder="Password" required="required" name="password"  title="Minimum 6 characters required" autocomplete="off" />
+					<input type="submit"  value="Register"/>
 				</form>
-				<div class="continue-button">
-					<a href="#small-dialog3" class="hvr-shutter-out-horizontal play-icon popup-with-zoom-anim">CONTINUE</a>
-				</div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>	
