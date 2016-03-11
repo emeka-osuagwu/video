@@ -1,0 +1,1 @@
+<?php echo $this->element('index/index_content'); ?>
