@@ -35,6 +35,10 @@ class FileController extends AppController {
 	public function beforeFilter(){
 		$this->Auth->Allow('index');
 	}
+	public function beforeRender(){
+		$authp = $this->sRead('users');
+		$this->set('auth',$authp);
+	}
 
 	public function index()
 	{
@@ -45,7 +49,7 @@ class FileController extends AppController {
 			"videos" => $videos,
 			"audios" => $audios
 		];
-
+		
 		$this->set('data', $data);
 	}
 

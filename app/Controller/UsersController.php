@@ -43,13 +43,31 @@ class UsersController extends AppController {
 		}
 	}
 
-	public function login()
-	{
-		$requestType =  $this->request->is('post');
-	
-		if ($requestType) {
-			print_r($this->request->data);
+public function login() {
+
+	if ($this->request->is('post')) {
+
+		$conditions= ['email' => $this->request->data['email'] , 'password' => $this->request->data['password'] ];
+		$check = $this->User->find('first', compact('conditions'));		
+		if(!$check){
+			return "no record";
 			exit;
 		}
+
+		if ($this->Auth->login(array('id' =>$check['User']['id']))) {
+		
+			$user = $this->sWrite("users", $check);
+			$this->redirect('/file/index');
+		
+		}
+
+		$this->Session->setFlash(__('Your username or password was incorrect.'));
 	}
+}
+
+public function test(){
+	$this->autoRender = false;
+	return "Hello";
+	exit;
+}
 }

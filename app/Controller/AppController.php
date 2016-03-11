@@ -38,8 +38,30 @@ class AppController extends Controller {
 		return json_encode($data);
 	}
 
-	public $components = [
-		'Auth', 'Session'
-	];
+	public $components = ['Auth' => [
+	        'loginRedirect' => ['controller' => 'users', 'action' => 'login'],
+	        'loginAction'=>['controller'=>'users', 'action'=>'login'],
+	        'logoutRedirect' => ['controller' => 'users', 'action' => 'index']
+	    ],'Session','Paginator'];
+
+
+	    function sWrite($key, $value) {
+
+		        $this->Session->write($key, $value);
+
+	    }
+
+    function sRead($key, $defaultValue = NULL) {
+
+        $value = $this->Session->read($key);
+
+        if ($value === NULL)
+
+            return $defaultValue;
+
+        return $value;
+    }
+
+
 
 }
