@@ -11,7 +11,7 @@
 		  </ul>
 
 		  <div class="tab-content">
-			<div role="tabpanel" class="tab-pane " id="home">
+			<div role="tabpanel" class="tab-pane active" id="home">
 				<div class="upload-grids">
 					<div class="upload-right">
 						<div class="upload-file">
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 
-			<div role="tabpanel" class="tab-pane active" id="profile" class="">
+			<div role="tabpanel" class="tab-pane" id="profile" class="">
 				<div class="upload-grids">
 					<div class="upload-right" style="overflow: hidden;">
 
@@ -48,7 +48,7 @@
 							
 							<div class="form-group">
 								<label for="exampleInputEmail1">Video Url</label>
-								<input name="link" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ur;">
+								<input name="link" type="text" class="form-control" id="exampleInputEmail1" placeholder="Url">
 							</div>
 
 							<button type="submit" class="btn btn-default">Submit</button>
