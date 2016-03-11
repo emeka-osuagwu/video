@@ -38,8 +38,18 @@ class UsersController extends AppController {
 
 		if ($requestType) 
 		{
+			$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
 			$user = $this->User->save($this->request->data);
 		}
 	}
 
+	public function login()
+	{
+		$requestType =  $this->request->is('post');
+	
+		if ($requestType) {
+			print_r($this->request->data);
+			exit;
+		}
+	}
 }

@@ -32,6 +32,10 @@ class FileController extends AppController {
 
 	public $files = array();
 
+	public function beforeFilter(){
+		$this->Auth->Allow('index');
+	}
+
 	public function index()
 	{
 		$videos = $this->File->query("SELECT * FROM files WHERE type=0;");
@@ -63,7 +67,6 @@ class FileController extends AppController {
 			
 		}
 	}
-
 
 	public function uploadVIdeo($data)
 	{

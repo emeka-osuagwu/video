@@ -38,4 +38,8 @@ class AppController extends Controller {
 		return json_encode($data);
 	}
 
+	public $components = [
+		'Auth', 'Session'
+	];
+
 }
