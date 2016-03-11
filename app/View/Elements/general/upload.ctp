@@ -48,7 +48,7 @@
 							
 							<div class="form-group">
 								<label for="exampleInputEmail1">Video Url</label>
-								<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ur;">
+								<input name="link" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ur;">
 							</div>
 
 							<button type="submit" class="btn btn-default">Submit</button>

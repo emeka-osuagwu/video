@@ -48,10 +48,14 @@ class FileController extends AppController {
 
 	public function upload() {
 	
+
 		$requestType = $this->request->is('post');
 		
 		if ($requestType) 
 		{
+
+		print_r($this->request->data);
+		exit();
 			
 			if (!isset($this->request->data['type'])) 
 			{
@@ -95,6 +99,7 @@ class FileController extends AppController {
 	public function view($id)
 	{
 		$file = $this->File->query("SELECT * FROM files WHERE id=$id;");
+		
 		$this->set('file', $file);
 	}
 }

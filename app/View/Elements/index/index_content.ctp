@@ -6,11 +6,11 @@
 			<div class="recommended-info">
 				<h3>Recent Videos</h3>
 			</div>
-
             			<?php foreach ($data['videos'] as $video): ?>
+
 				<div class="col-md-4 resent-grid recommended-grid slider-top-grids" style="margin-bottom: 10px;">
 					<div class="resent-grid-img recommended-grid-img">
-						<a href="single.html"><img src="../images/t1.jpg" alt="" /></a>
+						<a href="/cakephp/file/view/<?php echo $video['files']['id']; ?>"><img src="../images/t1.jpg" alt="" /></a>
 						<div class="time">
 							<p>3:04</p>
 						</div>
@@ -19,7 +19,7 @@
 						</div>
 					</div>
 					<div class="resent-grid-info recommended-grid-info">
-						<h3><a href="single.html" class="title title-info"><?php echo $video['id']; ?></a></h3>
+						<h3><a href="/cakephp/file/view/<?php echo $video['files']['id']; ?>" class="title title-info"><?php echo $video['files']['description']; ?></a></h3>
 						<ul>
 							<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
 							<li class="right-list"><p class="views views-info">2,114,200 views</p></li>

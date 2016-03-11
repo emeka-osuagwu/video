@@ -3,7 +3,7 @@
 		<div class="col-sm-8 single-left">
 			<div class="song">
 				<div class="song-info">
-					<h3><?= h($file->title) ?></h3>	
+					<h3><?php echo $file[0]['files']['title']; ?></h3>	
 				</div>
 				<div class="video-grid">
 					<iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe>
@@ -34,7 +34,7 @@
 						<ul id="myList">
 							<li>
 								<h4>Published on 15 June 2015</h4>
-								<p><?php echo $file['title']; ?></p>
+								<p><?php echo $file[0]['files']['description'] ?></p>
 								
 							</li>
 							<li>
@@ -58,7 +58,7 @@
 			<div class="single-grid-right">
 				<div class="single-right-grids">
 					<div class="col-md-4 single-right-grid-left">
-						<a href="single.html"><img src="images/r1.jpg" alt="" /></a>
+						<a href="single.html"><img src="../../images/r1.jpg" alt="" /></a>
 					</div>
 					<div class="col-md-8 single-right-grid-right">
 						<a href="single.html" class="title"> Nullam interdum metus</a>
