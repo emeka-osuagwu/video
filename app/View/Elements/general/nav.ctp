@@ -24,6 +24,10 @@
 			<a href="/cakephp/file/upload">Upload</a>
 		</div>	
 
+		<div class="signin">	
+			<a href="/cakephp/users/logout" class="play-icon popup-with-zoom-anim">Logout</a>
+		</div>
+
 		<div class="signin">
 			
 			<a href="/cakephp/users/register" class="play-icon popup-with-zoom-anim">Sign Up</a>
