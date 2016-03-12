@@ -8,7 +8,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="/cakephp/file"><h1><img src="../images/logo.png" alt="" /></h1></a>
+		<a class="navbar-brand" href="/cakephp/file/index"><h1><img src="../images/logo.png" alt="" /></h1></a>
 	</div>
 
 
@@ -23,19 +23,14 @@
 		<div class="file">
 			<a href="/cakephp/file/upload">Upload</a>
 		</div>	
+			<div class="signin">
+				<a href="/cakephp/users/register" class="play-icon popup-with-zoom-anim">Sign Up</a>
+			</div>
 
-		<div class="signin">	
-			<a href="/cakephp/users/logout" class="play-icon popup-with-zoom-anim">Logout</a>
-		</div>
-
-		<div class="signin">
-			
-			<a href="/cakephp/users/register" class="play-icon popup-with-zoom-anim">Sign Up</a>
-		</div>
-
-		<div class="signin">
-			<a href="/cakephp/users/login" class="play-icon popup-with-zoom-anim">Sign In</a>
-		</div>
+			<div class="signin">
+				<a href="/cakephp/users/login" class="play-icon popup-with-zoom-anim">Sign In</a>
+			</div>
+		
 		<div class="clearfix"> </div>
 	</div>
 </nav>

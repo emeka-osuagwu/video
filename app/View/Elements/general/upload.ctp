@@ -34,8 +34,7 @@
 					<div class="upload-right" style="overflow: hidden;">
 
 						<form action="/cakephp/file/upload" method="post" class="col-md-6 col-md-offset-3">
-							
-							<input type="text" hidden="true" name="type" value="0">
+							<input type="text" " name="type" value="<?php echo $auth['User']['id']?>">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Title</label>
 								<input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">

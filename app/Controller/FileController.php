@@ -34,6 +34,7 @@ class FileController extends AppController {
 
 	public function beforeFilter(){
 		$this->Auth->Allow('index');
+		$this->Auth->Allow('view');
 	}
 	public function beforeRender(){
 		$authp = $this->sRead('users');
@@ -76,7 +77,6 @@ class FileController extends AppController {
 
 	public function uploadVIdeo($data)
 	{
-		$data['user_id'] = 1;
 		$new_file = $this->File->save($data);
 	}
 
