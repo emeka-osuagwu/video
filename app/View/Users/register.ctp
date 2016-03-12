@@ -14,7 +14,9 @@
 
 						<form action="/cakephp/users/register" method="post" class="col-md-6 col-md-offset-3">
 						
-							<input type="text" name="user_id" class="form-control" id="exampleInputEmail1" placeholder="Username">
+							<center>
+								<h1>Register</h1>
+							</center>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Username</label>
 								<input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Username">

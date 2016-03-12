@@ -14,7 +14,9 @@
 					<div class="upload-right" style="overflow: hidden;">
 
 						<form action="/cakephp/users/login" method="post" class="col-md-6 col-md-offset-3">
-							
+							<center>
+								<h1>Login</h1>
+							</center>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email</label>
 								<input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
