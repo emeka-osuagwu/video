@@ -77,6 +77,8 @@ class FileController extends AppController {
 
 	public function uploadVIdeo($data)
 	{
+		print_r($data);
+		exit();
 		$new_file = $this->File->save($data);
 	}
 
@@ -87,16 +89,16 @@ class FileController extends AppController {
 		
 		$path = $_SERVER['DOCUMENT_ROOT'] . "/cakephp";
 
-		echo $path . '/' . $file['name'];
-		//echo  $target_path = . "webroot/".$file['name'];
+		$path =  $path . '/app/webroot/';
 
+		$file_name = $file['name'];
 
-		if(move_uploaded_file($file['tmp_name'], "webroot")) {
-			echo "string";
+		if(move_uploaded_file($file['tmp_name'],  $path . $file_name)) {
+			
+			$data['link'] 		= $file_name;
+			$new_file = $this->File->save($data);
+			$this->redirect('index');
 		}
-
-
-		exit;
 	}
 
 

@@ -19,6 +19,7 @@
 								<span class="glyphicon glyphicon-open" aria-hidden="true"></span>
 							</div>
 							<form action="/cakephp/file/upload" method="post" enctype="multipart/form-data">
+								<input type="text" hidden="true" name="user_id" value="<?php echo $auth['User']['id']?>">
 								<input type="file" name="audio_file" value="Choose file..">
 								<div class="upload-info">
 									<button class="btn">Upload</button>

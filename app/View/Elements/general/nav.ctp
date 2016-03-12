@@ -31,6 +31,6 @@
 				<a href="/cakephp/users/login" class="play-icon popup-with-zoom-anim">Sign In</a>
 			</div>
 		
-		<div class="clearfix"> </div>
+		<div class="clearfix"></div>
 	</div>
 </nav>
