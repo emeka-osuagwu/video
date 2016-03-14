@@ -8,7 +8,10 @@
 
 		  <div class="tab-content">
 	
-
+<?php
+           echo $this->Session->flash();
+           echo $this->element('form_validator');
+           ?>
 			<div role="tabpanel" class="tab-pane active" id="profile" class="">
 				<div class="upload-grids">
 					<div class="upload-right" style="overflow: hidden;">

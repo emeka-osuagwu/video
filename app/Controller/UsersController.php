@@ -39,54 +39,96 @@ class UsersController extends AppController {
 	public function register() {
 	
 		$requestType = $this->request->is('post');
-		$rules = array(
+		
+		$rules = [
 
-		        'User'=>array(
-		            'email'=>array(FV_EMAIL => 'Please insert your email',FV_REQUIRED => "Please your email is required at this point"),
-		            'name'=>array(FV_REQUIRED => "Please enter your name "),
-		            'password'=>array(FV_REQUIRED => "Please enter your password ")
-		            )              
+			'User'=> [
+				'email'	=> [ 
+					FV_EMAIL 	=> 'Please insert your email',
+					FV_REQUIRED	 => "Please your email is required at this point"
+				],
 
-		        );
+				'name'	=> [
+					FV_REQUIRED => "Please enter your name "
+				],
+				
+				'password' => [
+					FV_REQUIRED => "Please enter your password "
+				],  
+			]           
+		];
 		
 		if ($requestType) 
 		{
-		        $this->FormValidator->setRules($rules);
+			$this->FormValidator->setRules($rules);
 
-		        if($this->FormValidator->validate()){
-			$data =  $this->request->data;
-			$data['password'] = AuthComponent::password($this->request->data['password']);
-			$user = $this->User->save($data);
-			$this->redirect('login');
-		}
+			if($this->FormValidator->validate()){
+				$data =  $this->request->data;
+				$data['password'] = AuthComponent::password($this->request->data['password']);
+				$user = $this->User->save($data);
+				$this->redirect('login');
+			}
 		}
 	}
 
-public function login() {
+	public function login() {
 
-	if ($this->request->is('post')) {
-
-		$conditions= ['email' => $this->request->data['email'] , 'password' => $this->request->data['password'] ];
-		$check = $this->User->find('first', compact('conditions'));		
-		if(!$check){
-			return "no record";
-			exit;
-		}
-
-		if ($this->Auth->login(array('id' =>$check['User']['id']))) {
 		
-			$user = $this->sWrite("users", $check);
-			$this->redirect('/file/index');
-		
-		}
 
-		$this->Session->setFlash(__('Your username or password was incorrect.'));
+		$rules = [
+
+			'User'=> [
+				'email'	=> [ 
+					FV_EMAIL 	=> 'Please insert your email',
+					FV_REQUIRED	 => "Please your email is required at this point"
+				],
+
+				'password' => [
+					FV_REQUIRED => "Please enter your password "
+				],  
+			]           
+		];
+		
+
+		if ($this->request->is('post')) {
+			$this->FormValidator->setRules($rules);
+			if($this->FormValidator->validate()){
+				$conditions= [
+					'email' 		=> $this->request->data['email'] , 
+					'password' 	=> $this->request->data['password'] 
+				];
+			}
+			
+			$check = $this->User->find('first', compact('conditions'));		
+			if(!$check){
+				return "no record";
+				exit;
+			}
+
+			if ($this->Auth->login(array('id' =>$check['User']['id']))) {
+			
+				$user = $this->sWrite("users", $check);
+				$this->redirect('/file/index');
+			
+			}
+
+			$this->Session->setFlash(__('Your username or password was incorrect.'));
+		}
 	}
-}
 
-public function test(){
-	$this->autoRender = false;
-	return "Hello";
-	exit;
-}
+
+
+
+
+
+
+
+
+
+
+	public function test(){
+		$this->autoRender = false;
+		return "Hello";
+		exit;
+	}
 }
