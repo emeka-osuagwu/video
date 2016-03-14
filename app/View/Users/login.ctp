@@ -22,12 +22,12 @@
 							</center>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email</label>
-								<input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+								<input type="text" name="data[User][email]" class="form-control" id="exampleInputEmail1" placeholder="Email">
 							</div>
 							
 							<div class="form-group"></label>
 								<label for="exampleInputEmail1">Passwrd</label>
-								<input name="password" type="text" class="form-control" id="exampleInputEmail1" placeholder="Password">
+								<input name="data[User][password]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Password">
 							</div>
 
 							<button type="submit" class="btn btn-default">Login</button>
