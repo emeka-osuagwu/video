@@ -42,7 +42,7 @@ class AppController extends Controller {
 	        'loginRedirect' => ['controller' => 'users', 'action' => 'login'],
 	        'loginAction'=>['controller'=>'users', 'action'=>'login'],
 	        'logoutRedirect' => ['controller' => 'users', 'action' => 'index']
-	    ],'Session','Paginator'];
+	    ],'Session','Paginator','FormValidator', 'RequestHandler'];
 
 
 	    function sWrite($key, $value) {

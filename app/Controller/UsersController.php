@@ -39,14 +39,26 @@ class UsersController extends AppController {
 	public function register() {
 	
 		$requestType = $this->request->is('post');
+		$rules = array(
 
+		        'User'=>array(
+		            'email'=>array(FV_EMAIL => 'Please insert your email',FV_REQUIRED => "Please your email is required at this point"),
+		            'name'=>array(FV_REQUIRED => "Please enter your name "),
+		            'password'=>array(FV_REQUIRED => "Please enter your password ")
+		            )              
+
+		        );
+		
 		if ($requestType) 
 		{
+		        $this->FormValidator->setRules($rules);
 
+		        if($this->FormValidator->validate()){
 			$data =  $this->request->data;
 			$data['password'] = AuthComponent::password($this->request->data['password']);
 			$user = $this->User->save($data);
 			$this->redirect('login');
+		}
 		}
 	}
 
