@@ -7,7 +7,7 @@
 				<h3>Recent Videos</h3>
 			</div>
             			<?php foreach ($data['videos'] as $video): ?>
-					<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
+					<div class="col-md-4 resent-grid recommended-grid slider-top-grids" style="margin-bottom: 10px;">
 						<div class="resent-grid-img recommended-grid-img">
 							<a href="/cakephp/file/view/<?php echo $video['File']['id']; ?>"><img src="../images/t1.jpg" alt="" /></a>
 							<div class="time">
@@ -39,7 +39,7 @@
 				<?php foreach ($data['audios'] as $audio): ?>
 					<div class="col-md-3 resent-grid recommended-grid">
 						<div class="resent-grid-img recommended-grid-img">
-							<a href="single.html"><img src="../images/we2.jpg" alt=""></a>
+							<a href="/cakephp/file/view/<?php echo $video['File']['id']; ?>"><img src="../images/we2.jpg" alt=""></a>
 							<div class="time small-time">
 								<p>7:30</p>
 							</div>

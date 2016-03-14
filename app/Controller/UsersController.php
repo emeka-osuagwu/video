@@ -31,7 +31,7 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	public $uses = array();
-	
+
 	public function beforeFilter(){	
 		$this->Auth->Allow('register');
 	}
@@ -42,8 +42,11 @@ class UsersController extends AppController {
 
 		if ($requestType) 
 		{
-			$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
-			$user = $this->User->save($this->request->data);
+
+			$data =  $this->request->data;
+			$data['password'] = AuthComponent::password($this->request->data['password']);
+			$user = $this->User->save($data);
+			$this->redirect('login');
 		}
 	}
 

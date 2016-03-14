@@ -41,6 +41,13 @@ class FileController extends AppController {
 		$this->set('auth',$authp);
 	}
 
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id'
+		)
+	);
+
 	public function index()
 	{	
 		$conditions = ['type' => '0'];
@@ -77,14 +84,15 @@ class FileController extends AppController {
 
 	public function uploadVIdeo($data)
 	{
-		print_r($data);
-		exit();
 		$new_file = $this->File->save($data);
+		$this->redirect('/file/index');
 	}
 
 	public function uploadAudio($data)
 	{
 		
+		$data['type'] = 1;
+
 		$file = $_FILES['audio_file'];
 		
 		$path = $_SERVER['DOCUMENT_ROOT'] . "/cakephp";
@@ -104,7 +112,8 @@ class FileController extends AppController {
 
 	public function view($id)
 	{
-		$file = $this->File->query("SELECT * FROM files WHERE id=$id;");
+		$conditions = ['id' => $id];
+		$file = $this->File->find('all', compact('conditions'));
 		
 		$this->set('file', $file);
 	}
