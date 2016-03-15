@@ -6,3 +6,4 @@
 <?php echo $this->Html->script('responsiveslides.min.js'); ?>
 
 <?php echo $this->Html->script('sweetalert.min.js'); ?>
+<?php echo $this->Html->script('custom.js'); ?>
