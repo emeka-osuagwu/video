@@ -39,8 +39,8 @@ class SearchController extends AppController {
 	public function index()
 	{
 		if($this->data['formtype'] ==1){
-		dd($searchWords);
 		$searchWords = isset($this -> data['Search']['search']) ? $this -> data['Search']['search'] : false;
+		dd($searchWords);
 
 		
 		if ($searchWords) {
