@@ -4,3 +4,5 @@
 <?php echo $this->Html->script('bootstrap.min.js'); ?>
 <?php echo $this->Html->script('modernizr.custom.min.js'); ?>
 <?php echo $this->Html->script('responsiveslides.min.js'); ?>
+
+<?php echo $this->Html->script('sweetalert.min.js'); ?>

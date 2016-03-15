@@ -42,7 +42,6 @@ class SearchController extends AppController {
 		$searchWords = isset($this -> data['Search']['search']) ? $this -> data['Search']['search'] : false;
 		dd($searchWords);
 
-		
 		if ($searchWords) {
 			$searchParts = explode(' ', $searchWords);
 			foreach ($searchParts as $part) {
