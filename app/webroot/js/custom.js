@@ -12,6 +12,15 @@ function login() {
 	{
 		login_error();
 	}
+	else if (email_value == '' || ! /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_value)) 
+	{
+		login_error();
+	}
+	else{
+		alert('good')
+	}
+
+
 }
 
 
