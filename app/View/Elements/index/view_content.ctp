@@ -2,15 +2,17 @@
 	<div class="show-top-grids">
 		<div class="col-sm-8 single-left">
 			<div class="song">
-			<?php echo $file[0]['File']['title']; ?>
 				<div class="song-info">
 					<h3><?php echo $file[0]['File']['title']; ?></h3>	
 				</div>
+					<!-- 					
 					<audio controls="controls">
 						<source src="../../bleed.mp3" type="audio/ogg" />
 						<source src="track.mp3" type="audio/mpeg" />
 						Your browser does not support the audio element.
-					</audio>
+					</audio> 
+					-->
+					<iframe src="https://www.youtube.com/embed/<?php echo $file[0]['File']['link']; ?>" allowfullscreen></iframe>
 			</div>
 			<div class="song-grid-right">
 				
@@ -37,7 +39,7 @@
 						<ul id="myList">
 							<li>
 								<h4>Published on 15 June 2015</h4>
-								<p><?php echo $file['File']['description'] ?></p>
+								<p><?php echo $file[0]['File']['description'] ?></p>
 								
 							</li>
 							<li>

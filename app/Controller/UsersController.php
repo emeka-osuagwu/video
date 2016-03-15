@@ -94,8 +94,8 @@ class UsersController extends AppController {
 			$this->FormValidator->setRules($rules);
 			if($this->FormValidator->validate()){
 				$conditions= [
-					'email' 		=> $this->request->data['email'] , 
-					'password' 	=> $this->request->data['password'] 
+					'email' 		=> $this->request->data['User']['email'] , 
+					'password' 	=> $this->request->data['User']['password'] 
 				];
 			}
 			

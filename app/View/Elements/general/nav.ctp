@@ -14,8 +14,8 @@
 
 <div id="navbar" class="navbar-collapse collapse">
 	<div class="top-search">
-		<form class="navbar-form navbar-right">
-			<input type="text" class="form-control" placeholder="Search...">
+		<form class="navbar-form navbar-right" action="/cakephp/search" method="get">
+			<input type="text" class="form-control" name="data[Search]" placeholder="Search...">
 			<input type="submit" value=" ">
 		</form>
 	</div>
