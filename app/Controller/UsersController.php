@@ -74,7 +74,6 @@ class UsersController extends AppController {
 	public function login() {
 
 		
-
 		$rules = [
 
 			'User'=> [
@@ -91,6 +90,7 @@ class UsersController extends AppController {
 		
 
 		if ($this->request->is('post')) {
+		dd('cksjdcsd');
 			$this->FormValidator->setRules($rules);
 			if($this->FormValidator->validate()){
 				$conditions= [
